@@ -7,7 +7,6 @@ module arrow(direction=[1, 0, 0],
              arrow_shaft_radius=.5,
              arrow_head_h=2.5,
              arrow_head_r=1.25) {
-    echo("arrow");
     assert(norm(direction) != 0, "Parameter direction for arrow must be non-zero");
     unit_direction = direction/norm(direction);
     zaxis=[0, 0, 1];
