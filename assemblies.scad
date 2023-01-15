@@ -30,11 +30,6 @@
  *        debug               A boolean, which is true to debug
  *                            with a cutting plane. The default is
  *                            is false.
- *        infinity            A vector with three large coordinates.
- *                            The cutting plane is one face of a
- *                            large cube of this size. DEBUG_DELTA
- *                            is useful here. The default is
- *                            DEBUG_DELTA(1000).
  *        normal              A non-zero vector pointing in the
  *                            direction of the plane to be cut out.
  *                            The cutting plane will be the face
@@ -42,6 +37,11 @@
  *                            face will be this vector. The
  *                            default is [1, 0, 0], which points
  *                            out of the positive X axis.
+ *        infinity            A vector with three large coordinates.
+ *                            The cutting plane is one face of a
+ *                            large cube of this size. DEBUG_DELTA
+ *                            is useful here. The default is
+ *                            DEBUG_DELTA(1000).
  *        offset              A value to offset the cutting plane.
  *                            Positive values will be offset along
  *                            the normal. Negative values will be 
@@ -107,14 +107,14 @@ module cutting_space(infinity=DEBUG_INFINITY,
     }
 }
 
-module assembly(infinity=DEBUG_INFINITY, 
-                normal=DEBUG_NORMAL, 
-                offset=DEBUG_OFFSET, 
-                debug=false,
+module assembly(debug=false,
+                normal=DEBUG_NORMAL,
+                offset=DEBUG_OFFSET,
+                only_preview=true,
                 show_cutting_space=false,
                 arrow=false,
                 arrow_scale=1,
-                only_preview=true) {
+                infinity=DEBUG_INFINITY) {
     adebug=($preview) ? debug : !only_preview;
     if (adebug) {
         if (show_cutting_space) {
