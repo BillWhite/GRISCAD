@@ -62,3 +62,7 @@ This will show a cube with a sphere inside it. If you preview it you
 will see part of the sphere cut away. If you render it will see the
 entire cube, but there will be a hole inside it.
 
+## What's More.
+This is supposed to work well with `github.com:billwhite/cookiecutter-openscadpackage`.
+Maybe it does.
+
